@@ -1,6 +1,6 @@
 # sarif-playground
 
-Repo to add SARIF support to Pysa
+Repo to test SARIF support in [SAPP](https://github.com/facebook/sapp/)
 
 ## Credits
 `main.py` is from [breakableflask](https://github.com/stephenbradshaw/breakableflask/)
