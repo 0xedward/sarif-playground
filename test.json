@@ -1,0 +1,201 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/master/Schemata/sarif-schema-2.1.0.json",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "Pysa",
+          "informationUri": "https://github.com/facebook/pyre-check/",
+          "rules": [
+            {
+              "id": "5001",
+              "name": "Possible shell injection"
+            },
+            {
+              "id": "5002",
+              "name": "Test flow"
+            },
+            {
+              "id": "5005",
+              "name": "SQL injection."
+            },
+            {
+              "id": "5007",
+              "name": "User data to XML Parser."
+            },
+            {
+              "id": "5008",
+              "name": "XSS"
+            },
+            {
+              "id": "5009",
+              "name": "Demo flow"
+            },
+            {
+              "id": "5010",
+              "name": "User data to getattr"
+            },
+            {
+              "id": "5011",
+              "name": "User data to filesystem operation (read/write)"
+            },
+            {
+              "id": "5012",
+              "name": "Potential Server-side request forgery (SSRF)"
+            },
+            {
+              "id": "5018",
+              "name": "Open redirect"
+            },
+            {
+              "id": "5027",
+              "name": "Server secrets reach exit"
+            },
+            {
+              "id": "5029",
+              "name": "User controlled response headers"
+            },
+            {
+              "id": "5034",
+              "name": "User controlled string formatting"
+            },
+            {
+              "id": "5036",
+              "name": "User controlled data to email send to users"
+            },
+            {
+              "id": "5041",
+              "name": "Possible shell injection via command line arguments"
+            },
+            {
+              "id": "6060",
+              "name": "User-controlled data flows into filesystem API (other)"
+            },
+            {
+              "id": "6064",
+              "name": "Environment variable or import injection may result in RCE"
+            },
+            {
+              "id": "6065",
+              "name": "Commandline arguments injection may result in RCE"
+            },
+            {
+              "id": "6066",
+              "name": "Unsafe deserialization may result in RCE"
+            },
+            {
+              "id": "6073",
+              "name": "Potential Server Side Template Injection"
+            },
+            {
+              "id": "6074",
+              "name": "Hardcoded credentials may be used to authenticate requests"
+            },
+            {
+              "id": "6302",
+              "name": "Exception message is returned to the user"
+            }
+          ]
+        }
+      },
+      "results": [
+        {
+          "ruleId": "5001",
+          "level": "warning",
+          "message": "Data from [UserControlled] source(s) may reach [RemoteCodeExecution] sink(s)",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "main.py"
+                },
+                "region": {
+                  "startLine": 189,
+                  "startColumn": 42,
+                  "endColumn": 53
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "5005",
+          "level": "warning",
+          "message": "Data from [UserControlled] source(s) may reach [StringMayBeSQL] sink(s)",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "main.py"
+                },
+                "region": {
+                  "startLine": 296,
+                  "startColumn": 33,
+                  "endColumn": 70
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "6073",
+          "level": "warning",
+          "message": "User controlled data may eventually flow into a Server Side Template Injection sink",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "main.py"
+                },
+                "region": {
+                  "startLine": 279,
+                  "startColumn": 33,
+                  "endColumn": 42
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "5005",
+          "level": "warning",
+          "message": "Data from [UserControlled] source(s) may reach [StringMayBeSQL] sink(s)",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "main.py"
+                },
+                "region": {
+                  "startLine": 297,
+                  "startColumn": 35,
+                  "endColumn": 72
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "5001",
+          "level": "warning",
+          "message": "Data from [UserControlled] source(s) may reach [RemoteCodeExecution] sink(s)",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "main.py"
+                },
+                "region": {
+                  "startLine": 170,
+                  "startColumn": 43,
+                  "endColumn": 65
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
