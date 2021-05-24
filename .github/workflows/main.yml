@@ -1,0 +1,24 @@
+name: Pysa
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Expose SARIF Results
+      uses: actions/upload-artifact@v2
+      with:
+        name: SARIF Results
+        path: sarif.json
+    - name: Upload SARIF Results
+      uses: github/codeql-action/upload-sarif@v1
+      with:
+        sarif_file: sarif.json
