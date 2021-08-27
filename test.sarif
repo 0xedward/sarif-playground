@@ -140,6 +140,42 @@
                 }
               }
             }
+          ],
+          "codeFlows": [
+            {
+              "threadFlows": [
+                {
+                  "locations": [
+                    [
+                      {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "main.py"
+                          },
+                          "region": {
+                            "startLine": 287,
+                            "startColumn": 16,
+                            "endColumn": 28
+                          }
+                        }
+                      },
+                      {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "main.py"
+                          },
+                          "region": {
+                            "startLine": 296,
+                            "startColumn": 34,
+                            "endColumn": 70
+                          }
+                        }
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
           ]
         },
         {
