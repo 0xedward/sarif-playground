@@ -67,44 +67,16 @@
             {
               "id": "5041",
               "name": "Possible shell injection via command line arguments"
-            },
-            {
-              "id": "6060",
-              "name": "User-controlled data flows into filesystem API (other)"
-            },
-            {
-              "id": "6064",
-              "name": "Environment variable or import injection may result in RCE"
-            },
-            {
-              "id": "6065",
-              "name": "Commandline arguments injection may result in RCE"
-            },
-            {
-              "id": "6066",
-              "name": "Unsafe deserialization may result in RCE"
-            },
-            {
-              "id": "6073",
-              "name": "Potential Server Side Template Injection"
-            },
-            {
-              "id": "6074",
-              "name": "Hardcoded credentials may be used to authenticate requests"
-            },
-            {
-              "id": "6302",
-              "name": "Exception message is returned to the user"
             }
           ]
         }
       },
       "results": [
         {
-          "ruleId": "6073",
+          "ruleId": "5001",
           "level": "warning",
           "message": {
-            "text": "User controlled data may eventually flow into a Server Side Template Injection sink"
+            "text": "Data from [UserControlled] source(s) may reach [RemoteCodeExecution] sink(s)"
           },
           "locations": [
             {
@@ -113,11 +85,147 @@
                   "uri": "main.py"
                 },
                 "region": {
-                  "startLine": 279,
-                  "startColumn": 33,
-                  "endColumn": 42
+                  "startLine": 170,
+                  "startColumn": 43,
+                  "endColumn": 65
                 }
               }
+            }
+          ],
+          "codeFlows": [
+            {
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "main.py"
+                          },
+                          "region": {
+                            "startLine": 167,
+                            "startColumn": 19,
+                            "endColumn": 31
+                          }
+                        },
+                        "logicalLocations": [
+                          {
+                            "fullyQualifiedName": "Obj{werkzeug.wrappers.BaseRequest.form}"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "main.py"
+                          },
+                          "region": {
+                            "startLine": 170,
+                            "startColumn": 44,
+                            "endColumn": 65
+                          }
+                        },
+                        "logicalLocations": [
+                          {
+                            "fullyQualifiedName": "main.rp"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "main.py"
+                          },
+                          "region": {
+                            "startLine": 104,
+                            "startColumn": 18,
+                            "endColumn": 25
+                          }
+                        },
+                        "logicalLocations": [
+                          {
+                            "fullyQualifiedName": "os.popen"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "5001",
+          "level": "warning",
+          "message": {
+            "text": "Data from [UserControlled] source(s) may reach [RemoteCodeExecution] sink(s)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "main.py"
+                },
+                "region": {
+                  "startLine": 139,
+                  "startColumn": 35,
+                  "endColumn": 71
+                }
+              }
+            }
+          ],
+          "codeFlows": [
+            {
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "main.py"
+                          },
+                          "region": {
+                            "startLine": 139,
+                            "startColumn": 46,
+                            "endColumn": 61
+                          }
+                        },
+                        "logicalLocations": [
+                          {
+                            "fullyQualifiedName": "werkzeug.wrappers.BaseRequest.cookies"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "main.py"
+                          },
+                          "region": {
+                            "startLine": 139,
+                            "startColumn": 36,
+                            "endColumn": 71
+                          }
+                        },
+                        "logicalLocations": [
+                          {
+                            "fullyQualifiedName": "pickle.loads"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ]
             }
           ]
         },
@@ -172,9 +280,9 @@
                             "uri": "main.py"
                           },
                           "region": {
-                            "startLine": 296,
-                            "startColumn": 34,
-                            "endColumn": 70
+                            "startLine": 297,
+                            "startColumn": 36,
+                            "endColumn": 72
                           }
                         },
                         "logicalLocations": [
@@ -203,32 +311,59 @@
                   "uri": "main.py"
                 },
                 "region": {
-                  "startLine": 170,
-                  "startColumn": 43,
-                  "endColumn": 65
-                }
-              }
-            }
-          ]
-        },
-        {
-          "ruleId": "5001",
-          "level": "warning",
-          "message": {
-            "text": "Data from [UserControlled] source(s) may reach [RemoteCodeExecution] sink(s)"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "main.py"
-                },
-                "region": {
                   "startLine": 189,
                   "startColumn": 42,
                   "endColumn": 53
                 }
               }
+            }
+          ],
+          "codeFlows": [
+            {
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "main.py"
+                          },
+                          "region": {
+                            "startLine": 186,
+                            "startColumn": 22,
+                            "endColumn": 34
+                          }
+                        },
+                        "logicalLocations": [
+                          {
+                            "fullyQualifiedName": "Obj{werkzeug.wrappers.BaseRequest.form}"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "main.py"
+                          },
+                          "region": {
+                            "startLine": 189,
+                            "startColumn": 43,
+                            "endColumn": 53
+                          }
+                        },
+                        "logicalLocations": [
+                          {
+                            "fullyQualifiedName": "eval"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ]
             }
           ]
         },
@@ -250,6 +385,123 @@
                   "endColumn": 70
                 }
               }
+            }
+          ],
+          "codeFlows": [
+            {
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "main.py"
+                          },
+                          "region": {
+                            "startLine": 287,
+                            "startColumn": 16,
+                            "endColumn": 28
+                          }
+                        },
+                        "logicalLocations": [
+                          {
+                            "fullyQualifiedName": "Obj{werkzeug.wrappers.BaseRequest.args}"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "main.py"
+                          },
+                          "region": {
+                            "startLine": 296,
+                            "startColumn": 34,
+                            "endColumn": 70
+                          }
+                        },
+                        "logicalLocations": [
+                          {
+                            "fullyQualifiedName": "leaf"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "6073",
+          "level": "warning",
+          "message": {
+            "text": "User controlled data may eventually flow into a Server Side Template Injection sink"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "main.py"
+                },
+                "region": {
+                  "startLine": 279,
+                  "startColumn": 33,
+                  "endColumn": 42
+                }
+              }
+            }
+          ],
+          "codeFlows": [
+            {
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "main.py"
+                          },
+                          "region": {
+                            "startLine": 264,
+                            "startColumn": 40,
+                            "endColumn": 52
+                          }
+                        },
+                        "logicalLocations": [
+                          {
+                            "fullyQualifiedName": "Obj{werkzeug.wrappers.BaseRequest.form}"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "main.py"
+                          },
+                          "region": {
+                            "startLine": 279,
+                            "startColumn": 34,
+                            "endColumn": 42
+                          }
+                        },
+                        "logicalLocations": [
+                          {
+                            "fullyQualifiedName": "flask.templating.render_template_string"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ]
             }
           ]
         }
