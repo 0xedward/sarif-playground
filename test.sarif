@@ -148,27 +148,41 @@
                   "locations": [
                     [
                       {
-                        "physicalLocation": {
-                          "artifactLocation": {
-                            "uri": "main.py"
+                        "location": {
+                          "physicalLocation": {
+                            "artifactLocation": {
+                              "uri": "main.py"
+                            },
+                            "region": {
+                              "startLine": 287,
+                              "startColumn": 16,
+                              "endColumn": 28
+                            }
                           },
-                          "region": {
-                            "startLine": 287,
-                            "startColumn": 16,
-                            "endColumn": 28
-                          }
+                          "logicalLocations": [
+                            {
+                              "fullyQualifiedName": "Obj{werkzeug.wrappers.BaseRequest.args}"
+                            }
+                          ]
                         }
                       },
                       {
-                        "physicalLocation": {
-                          "artifactLocation": {
-                            "uri": "main.py"
+                        "location": {
+                          "physicalLocation": {
+                            "artifactLocation": {
+                              "uri": "main.py"
+                            },
+                            "region": {
+                              "startLine": 296,
+                              "startColumn": 34,
+                              "endColumn": 70
+                            }
                           },
-                          "region": {
-                            "startLine": 296,
-                            "startColumn": 34,
-                            "endColumn": 70
-                          }
+                          "logicalLocations": [
+                            {
+                              "fullyQualifiedName": "leaf"
+                            }
+                          ]
                         }
                       }
                     ]
