@@ -3,4 +3,4 @@
 Repo to test SARIF support in [SAPP](https://github.com/facebook/sapp/)
 
 ## Credits
-`main.py` is from [breakableflask](https://github.com/stephenbradshaw/breakableflask/)
+`app.py` is from [pyre-check](https://github.com/facebook/pyre-check/)

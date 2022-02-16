@@ -1,0 +1,286 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/master/Schemata/sarif-schema-2.1.0.json",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "Pysa",
+          "informationUri": "https://github.com/facebook/pyre-check/",
+          "rules": [
+            {
+              "id": "5001",
+              "name": "Possible shell injection"
+            },
+            {
+              "id": "5002",
+              "name": "Test flow"
+            },
+            {
+              "id": "5005",
+              "name": "SQL injection."
+            },
+            {
+              "id": "5007",
+              "name": "User data to XML Parser."
+            },
+            {
+              "id": "5008",
+              "name": "XSS"
+            },
+            {
+              "id": "5009",
+              "name": "Demo flow"
+            },
+            {
+              "id": "5010",
+              "name": "User data to getattr"
+            },
+            {
+              "id": "5011",
+              "name": "User data to filesystem operation (read/write)"
+            },
+            {
+              "id": "5012",
+              "name": "Potential Server-side request forgery (SSRF)"
+            },
+            {
+              "id": "5018",
+              "name": "Open redirect"
+            },
+            {
+              "id": "5027",
+              "name": "Server secrets reach exit"
+            },
+            {
+              "id": "5029",
+              "name": "User controlled response headers"
+            },
+            {
+              "id": "5034",
+              "name": "User controlled string formatting"
+            },
+            {
+              "id": "5036",
+              "name": "User controlled data to email send to users"
+            },
+            {
+              "id": "5041",
+              "name": "Possible shell injection via command line arguments"
+            },
+            {
+              "id": "5301",
+              "name": "Possible shell injection"
+            },
+            {
+              "id": "5305",
+              "name": "SQL injection."
+            },
+            {
+              "id": "5307",
+              "name": "User data to XML Parser."
+            },
+            {
+              "id": "5308",
+              "name": "XSS"
+            },
+            {
+              "id": "5311",
+              "name": "User data to filesystem operation (read/write)"
+            },
+            {
+              "id": "5360",
+              "name": "User-controlled data flows into filesystem API (other)"
+            },
+            {
+              "id": "5364",
+              "name": "Environment variable or import injection may result in RCE"
+            },
+            {
+              "id": "5365",
+              "name": "Commandline arguments injection may result in RCE"
+            },
+            {
+              "id": "5366",
+              "name": "Unsafe deserialization may result in RCE"
+            },
+            {
+              "id": "5373",
+              "name": "Potential Server Side Template Injection"
+            }
+          ]
+        }
+      },
+      "results": [
+        {
+          "ruleId": "6065",
+          "level": "warning",
+          "message": {
+            "text": "Data from [UserControlled] source(s) may reach [ExecArgSink] sink(s)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "app.py"
+                },
+                "region": {
+                  "startLine": 29,
+                  "startColumn": 19,
+                  "endColumn": 37
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "5008",
+          "level": "warning",
+          "message": {
+            "text": "Data from [UserControlled] source(s) may reach [XSS] sink(s)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "app.py"
+                },
+                "region": {
+                  "startLine": 41,
+                  "startColumn": 27,
+                  "endColumn": 35
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "5012",
+          "level": "warning",
+          "message": {
+            "text": "Data from [UserControlled] source(s) may reach [RequestSend_URI] sink(s)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "app.py"
+                },
+                "region": {
+                  "startLine": 54,
+                  "startColumn": 17,
+                  "endColumn": 25
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "6065",
+          "level": "warning",
+          "message": {
+            "text": "Data from [UserControlled] source(s) may reach [ExecArgSink] sink(s)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "app.py"
+                },
+                "region": {
+                  "startLine": 24,
+                  "startColumn": 19,
+                  "endColumn": 37
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "5005",
+          "level": "warning",
+          "message": {
+            "text": "Data from [UserControlled] source(s) may reach [SQL, StringMayBeSQL] sink(s)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "app.py"
+                },
+                "region": {
+                  "startLine": 49,
+                  "startColumn": 16,
+                  "endColumn": 63
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "6065",
+          "level": "warning",
+          "message": {
+            "text": "Data from [UserControlled] source(s) may reach [ExecArgSink] sink(s)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "app.py"
+                },
+                "region": {
+                  "startLine": 19,
+                  "startColumn": 19,
+                  "endColumn": 27
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "5011",
+          "level": "warning",
+          "message": {
+            "text": "Data from [UserControlled] source(s) may reach [FileSystem_ReadWrite] sink(s)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "app.py"
+                },
+                "region": {
+                  "startLine": 34,
+                  "startColumn": 13,
+                  "endColumn": 21
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "5007",
+          "level": "warning",
+          "message": {
+            "text": "Data from [UserControlled] source(s) may reach [XMLParser] sink(s)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "app.py"
+                },
+                "region": {
+                  "startLine": 59,
+                  "startColumn": 21,
+                  "endColumn": 29
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
